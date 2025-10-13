@@ -1,4 +1,5 @@
-**#1**
+**#1** transcriptome_pipeline.sh
+
 _🧬 RNA-Seq Alignment and Quantification Pipeline:_
 
 A lightweight and automated RNA-Seq data processing pipeline written in Bash, designed for reproducible transcriptome analysis.
@@ -42,8 +43,20 @@ SRA_ID → fasterq-dump → fastp → subread-buildindex → subjunc → samtool
 | `*_featureCounts_output.txt`             | Gene-level read counts   |
 
 
-**#2**
-_🧬 Gene Expression Heatmap Generator:_
+**#2** heatmap_GOI –-> for selected genes.
+
+Features:
+  Directly written in R.
+  Converts .ods input files to .csv using LibreOffice (headless mode).
+  Generates a heatmap for a user-defined list of genes.
+  Simple clustering: rows and columns are not clustered.
+  Easy for small, targeted gene sets.
+
+Usage:
+  genes_of_interest <- c("WASH9P", "MIR12136", "OR4F16")
+
+
+**#3** heatmaps_n-genes.py --> automatically selects the most variable genes.
 
 A lightweight, cross-language tool that generates publication-ready heatmaps of the top variable genes from an expression matrix.
 Built with Python + R, this script automates preprocessing, normalization, and visualization of gene expression data.
@@ -73,7 +86,7 @@ R Packages(Installed automatically if missing):
 eg:
 ./heatmaps.py expression_data.txt 100
 
-Format of featurecounts file
+Format of featurecounts file:
 | Gene   | Sample1 | Sample2 | Sample3 | ... |
 |---------|----------|----------|----------|-----|
 | GENE1  | 4.5      | 5.2      | 6.1      |     |
@@ -86,3 +99,4 @@ Format of featurecounts file
 File: heatmap_output.pdf
 Content: Hierarchically clustered heatmap of top variable genes
 Color Scale: Blue → White → Red (low → medium → high expression)
+
