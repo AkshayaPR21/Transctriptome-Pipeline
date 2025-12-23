@@ -1,0 +1,21 @@
+```bash
+conda --version #install conda
+```
+```bash
+conda create -n rnaseq python=3.10 -y
+conda activate rnaseq
+```
+```bash
+conda config --add channels defaults
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+```bash
+conda install sra-tools fastp subread samtools -y
+```
+```bash
+
+```
+```bash
+```
