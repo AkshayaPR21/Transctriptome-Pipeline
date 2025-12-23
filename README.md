@@ -17,7 +17,7 @@ It takes an SRA ID, performs QC, alignment, and gene quantification, and outputs
 SRA_ID → fasterq-dump → fastp → subread-buildindex → subjunc → samtools sort → featureCounts
 
 📦 Dependencies:
-#conda install -c bioconda sra-tools fastp subread samtools
+
 | Tool        | Purpose                                                                                         |
 | ----------- | ----------------------------------------------------------------------------------------------- |
 | `sra-tools` | Download and convert SRA to FASTQ                                                               |
